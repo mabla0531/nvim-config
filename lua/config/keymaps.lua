@@ -19,10 +19,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 -- exit terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
--- disable yank on D-motions
-vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true, silent = true })
-vim.keymap.set({ "n", "v" }, "D", '"_D', { noremap = true, silent = true })
-
 -- code actions
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = " Code actions" })
 
