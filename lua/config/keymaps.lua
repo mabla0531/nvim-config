@@ -22,3 +22,11 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- disable yank on D-motions
 vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "D", '"_D', { noremap = true, silent = true })
+
+-- code actions
+vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = " Code actions" })
+
+-- telescope
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = " Find Files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = " Live Grep" })

@@ -23,3 +23,21 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- enable clipboard sync
 vim.opt.clipboard = "unnamedplus"
+
+-- treesitter stuff and things
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
+		"lua",
+		"rust",
+		"svelte",
+		"javascript",
+		"typescript",
+		"zig",
+		"c",
+		"cpp",
+	},
+
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
