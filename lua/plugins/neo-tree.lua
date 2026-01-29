@@ -11,6 +11,7 @@ return {
 		opts = {
 			window = {
 				width = 24,
+				auto_expand_width = true,
 			},
 		},
 	},
