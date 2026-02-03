@@ -4,8 +4,7 @@ return {
 		version = "*",
 		config = function()
 			require("toggleterm").setup({
-				size = 16,
-				open_mapping = [[<c-t>]],
+				size = 12,
 				direction = "horizontal",
 				shade_terminals = true,
 				start_in_insert = true,

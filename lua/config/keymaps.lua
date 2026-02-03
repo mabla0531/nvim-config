@@ -38,3 +38,6 @@ vim.keymap.set("n", "<S-k>", "<cmd>resize +2<cr>", { desc = "Increase window hei
 vim.keymap.set("n", "<S-j>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 vim.keymap.set("n", "<S-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 vim.keymap.set("n", "<S-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
+-- ToggleTerm
+vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", { desc = "Toggle Terminal", silent = true })
