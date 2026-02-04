@@ -47,3 +47,6 @@ vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldmethod = "expr"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
+
+-- hide default vim mode indicator
+vim.opt.showmode = false

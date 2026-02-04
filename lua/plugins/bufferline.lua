@@ -14,7 +14,7 @@ return {
 					local icon = level:match("error") and "" or ""
 					return " " .. icon .. " " .. count
 				end,
-				always_show_bufferline = true,
+				always_show_bufferline = false,
 				offsets = {
 					{
 						filetype = "neo-tree",

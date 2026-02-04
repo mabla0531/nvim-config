@@ -23,12 +23,16 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- code actions
-vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = " Code actions" })
+vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = " Code Actions" })
+vim.keymap.set({ "n", "v" }, "<leader>cr", vim.lsp.buf.rename, { desc = " Rename All" })
 
 -- telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = " Find Files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = " Live Grep" })
+vim.keymap.set("n", "<leader>fr", "<cmd>Telescope lsp_references<cr>", { desc = " Find References" })
+vim.keymap.set("n", "<leader>fd", "<cmd>Telescope lsp_definitions<cr>", { desc = " Find Definitions" })
+vim.keymap.set("n", "<leader>fi", "<cmd>Telescope lsp_implementations<cr>", { desc = " Find Implementations" })
 
 -- go to definition
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = " Go to Definition" })

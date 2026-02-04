@@ -4,4 +4,4 @@ require("config.options")
 require("config.keymaps")
 
 -- set colorscheme
-vim.cmd([[colorscheme monokai-pro]])
+vim.cmd([[colorscheme kanagawa]])
