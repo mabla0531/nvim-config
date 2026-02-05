@@ -8,6 +8,7 @@ return {
 					lua = { "stylua" },
 					javascript = { "prettierd", "prettier" },
 					typescript = { "prettierd", "prettier" },
+					svelte = { "prettier" },
 					json = { "prettier" },
 					html = { "prettier" },
 					css = { "prettier" },
