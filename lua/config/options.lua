@@ -53,3 +53,7 @@ vim.opt.foldlevelstart = 99
 
 -- hide default vim mode indicator
 vim.opt.showmode = false
+
+-- ignore case when searching
+vim.opt.ignorecase = true
+vim.opt.smartcase = true

@@ -39,3 +39,10 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = " Go to Definition" }
 
 -- ToggleTerm
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", { desc = "Toggle Terminal", silent = true })
+
+-- quick visual mode select
+vim.keymap.set({ "n" }, "H", "vb", { noremap = true })
+vim.keymap.set({ "v" }, "H", "b", { noremap = true })
+vim.keymap.set({ "n" }, "L", "ve", { noremap = true })
+vim.keymap.set({ "v" }, "L", "e", { noremap = true })
+vim.keymap.set({ "v" }, "a", "be", { noremap = true })
