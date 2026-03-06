@@ -4,4 +4,5 @@ require("config.options")
 require("config.keymaps")
 
 -- set colorscheme
-vim.cmd([[colorscheme kanagawa]])
+vim.g.material_style = "darker"
+vim.cmd([[colorscheme material]])
