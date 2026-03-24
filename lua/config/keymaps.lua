@@ -1,8 +1,8 @@
 -- delete buffers
-vim.keymap.set("n", "<leader>x", "<cmd>Bdelete<cr>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>x", "<cmd>Bdelete<cr>", { desc = " Close Buffer" })
 
 -- neotree
-vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle NeoTree", silent = true })
+vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = " Toggle NeoTree", silent = true })
 
 -- paste without yank
 vim.keymap.set("x", "p", "P", { desc = "Paste without yanking" })
@@ -19,12 +19,52 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
+-- add buffer resizing
+local function is_leftmost()
+	return vim.fn.winnr() == vim.fn.winnr("h")
+end
+local function is_bottommost()
+	return vim.fn.winnr() == vim.fn.winnr("j")
+end
+
+vim.keymap.set("n", "<A-h>", function()
+	if is_leftmost() then
+		vim.cmd("vertical resize -2")
+	else
+		vim.cmd("vertical resize +2")
+	end
+end)
+
+vim.keymap.set("n", "<A-l>", function()
+	if is_leftmost() then
+		vim.cmd("vertical resize +2")
+	else
+		vim.cmd("vertical resize -2")
+	end
+end)
+
+vim.keymap.set("n", "<A-j>", function()
+	if is_bottommost() then
+		vim.cmd("resize -2")
+	else
+		vim.cmd("resize +2")
+	end
+end)
+
+vim.keymap.set("n", "<A-k>", function()
+	if is_bottommost() then
+		vim.cmd("resize +2")
+	else
+		vim.cmd("resize -2")
+	end
+end)
+
 -- exit terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- code actions
-vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = " Code Actions" })
-vim.keymap.set({ "n", "v" }, "<leader>cr", vim.lsp.buf.rename, { desc = " Rename All" })
+vim.keymap.set({ "n", "v" }, "<C-a>", vim.lsp.buf.code_action, { desc = " Code Actions" })
+vim.keymap.set({ "n", "v" }, "<leader>r", vim.lsp.buf.rename, { desc = " Rename All" })
 
 -- telescope
 local builtin = require("telescope.builtin")
@@ -38,7 +78,7 @@ vim.keymap.set("n", "<leader>fi", "<cmd>Telescope lsp_implementations<cr>", { de
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = " Go to Definition" })
 
 -- ToggleTerm
-vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", { desc = "Toggle Terminal", silent = true })
+vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", { desc = " Toggle Terminal", silent = true })
 
 -- quick visual mode select
 vim.keymap.set({ "n" }, "H", "vb", { noremap = true })
@@ -46,3 +86,6 @@ vim.keymap.set({ "v" }, "H", "b", { noremap = true })
 vim.keymap.set({ "n" }, "L", "ve", { noremap = true })
 vim.keymap.set({ "v" }, "L", "e", { noremap = true })
 vim.keymap.set({ "v" }, "a", "be", { noremap = true })
+
+-- disable help menu
+vim.keymap.set({ "n", "i", "v" }, "<F1>", "<nop>")

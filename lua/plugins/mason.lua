@@ -28,9 +28,9 @@ return {
 
 			vim.diagnostic.config({
 				underline = true,
-				signs = true,
+				signs = false,
 				virtual_text = false,
-				virtual_lines = true,
+				virtual_lines = false,
 			})
 
 			vim.api.nvim_create_autocmd("ColorScheme", {

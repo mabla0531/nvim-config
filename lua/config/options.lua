@@ -5,9 +5,6 @@ vim.opt.fillchars = { eob = " " }
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- disable word wrap
-vim.opt.wrap = false
-
 -- enable spaces instead of tabs
 vim.opt.expandtab = true
 
