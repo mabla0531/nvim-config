@@ -9,6 +9,7 @@ return {
 		},
 		lazy = false,
 		opts = {
+			open_files_do_not_replace_types = { "Trouble", "trouble", "qf", "Outline" },
 			window = {
 				width = 24,
 				auto_expand_width = true,

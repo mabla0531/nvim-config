@@ -32,18 +32,6 @@ return {
 				virtual_text = false,
 				virtual_lines = false,
 			})
-
-			vim.api.nvim_create_autocmd("ColorScheme", {
-				pattern = "*",
-				callback = function()
-					vim.cmd([[
-            highlight DiagnosticUnderlineError cterm=underline gui=underline 
-            highlight DiagnosticUnderlineWarn cterm=underline gui=underline 
-            highlight DiagnosticUnderlineInfo cterm=underline gui=underline
-            highlight DiagnosticUnderlineHint cterm=underline gui=underline 
-          ]])
-				end,
-			})
 		end,
 	},
 }

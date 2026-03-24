@@ -62,6 +62,9 @@ end)
 -- exit terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+-- disable fuckass '<,'> thing when pressing colon in visual mode
+vim.keymap.set("v", ":", ":<C-u>", { noremap = true })
+
 -- code actions
 vim.keymap.set({ "n", "v" }, "<C-a>", vim.lsp.buf.code_action, { desc = " Code Actions" })
 vim.keymap.set({ "n", "v" }, "<leader>r", vim.lsp.buf.rename, { desc = " Rename All" })
