@@ -7,12 +7,15 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"rust_analyzer",
-					"ts_ls",
 					"tailwindcss",
 					"svelte",
+					"ts_ls",
 					"clangd",
 					"zls",
 					"lua_ls",
+				},
+				automatic_enable = {
+					exclude = { "vtsls" },
 				},
 			})
 
