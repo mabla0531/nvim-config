@@ -21,42 +21,42 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 -- add buffer resizing
 local function is_leftmost()
-	return vim.fn.winnr() == vim.fn.winnr("h")
+  return vim.fn.winnr() == vim.fn.winnr("h")
 end
 local function is_bottommost()
-	return vim.fn.winnr() == vim.fn.winnr("j")
+  return vim.fn.winnr() == vim.fn.winnr("j")
 end
 
 vim.keymap.set("n", "<A-h>", function()
-	if is_leftmost() then
-		vim.cmd("vertical resize -2")
-	else
-		vim.cmd("vertical resize +2")
-	end
+  if is_leftmost() then
+    vim.cmd("vertical resize -2")
+  else
+    vim.cmd("vertical resize +2")
+  end
 end)
 
 vim.keymap.set("n", "<A-l>", function()
-	if is_leftmost() then
-		vim.cmd("vertical resize +2")
-	else
-		vim.cmd("vertical resize -2")
-	end
+  if is_leftmost() then
+    vim.cmd("vertical resize +2")
+  else
+    vim.cmd("vertical resize -2")
+  end
 end)
 
 vim.keymap.set("n", "<A-j>", function()
-	if is_bottommost() then
-		vim.cmd("resize -2")
-	else
-		vim.cmd("resize +2")
-	end
+  if is_bottommost() then
+    vim.cmd("resize -2")
+  else
+    vim.cmd("resize +2")
+  end
 end)
 
 vim.keymap.set("n", "<A-k>", function()
-	if is_bottommost() then
-		vim.cmd("resize +2")
-	else
-		vim.cmd("resize -2")
-	end
+  if is_bottommost() then
+    vim.cmd("resize +2")
+  else
+    vim.cmd("resize -2")
+  end
 end)
 
 -- exit terminal mode
@@ -84,11 +84,12 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = " Go to Definition" }
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", { desc = " Toggle Terminal", silent = true })
 
 -- quick visual mode select
-vim.keymap.set({ "n" }, "H", "vb", { noremap = true })
-vim.keymap.set({ "v" }, "H", "b", { noremap = true })
-vim.keymap.set({ "n" }, "L", "ve", { noremap = true })
-vim.keymap.set({ "v" }, "L", "e", { noremap = true })
-vim.keymap.set({ "v" }, "a", "be", { noremap = true })
+vim.keymap.set("n", "H", "vb", { noremap = true })
+vim.keymap.set("v", "H", "b", { noremap = true })
+vim.keymap.set("n", "L", "ve", { noremap = true })
+vim.keymap.set("v", "L", "e", { noremap = true })
 
 -- disable help menu
 vim.keymap.set({ "n", "i", "v" }, "<F1>", "<nop>")
+
+vim.keymap.set({ 'i', 'c' }, '<M-BS>', '<C-w>')
