@@ -4,4 +4,4 @@ require("config.options")
 require("config.keymaps")
 
 -- set colorscheme
-vim.cmd.colorscheme("catppuccin-macchiato")
+vim.cmd.colorscheme("catppuccin-mocha")
