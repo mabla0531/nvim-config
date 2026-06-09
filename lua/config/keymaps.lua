@@ -81,7 +81,7 @@ vim.keymap.set("n", "<leader>fi", "<cmd>Telescope lsp_implementations<cr>", { de
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = " Go to Definition" })
 
 -- ToggleTerm
-vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", { desc = " Toggle Terminal", silent = true })
+vim.keymap.set("n", "<leader>t", ":terminal<CR>", { desc = " Toggle Terminal", silent = true })
 
 -- quick visual mode select
 vim.keymap.set("n", "H", "vb", { noremap = true })
