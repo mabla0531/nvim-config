@@ -9,7 +9,7 @@ return {
     opts = {
       options = {
         themable = true,
-        mode = "tabs",
+        mode = "buffers",
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level)
           local icon = level:match("error") and "" or ""
