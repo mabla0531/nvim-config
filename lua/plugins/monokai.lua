@@ -4,7 +4,6 @@ return { {
   priority = 1000,
   config = function()
     require("monokai-pro").setup({
-      filter = "ristretto",
       styles = {
         comment = { italic = false },
         keyword = { italic = false },
