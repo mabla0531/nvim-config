@@ -41,6 +41,7 @@ return {
 						}
 					end,
 				},
+				hijack_netrw_behavior = "open_current",
 			},
 		},
 	},
