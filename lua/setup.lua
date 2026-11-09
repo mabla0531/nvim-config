@@ -10,23 +10,12 @@ require("bufferline").setup({
       return " " .. icon .. " " .. count
     end,
     separator_style = "slant",
-    offsets = {
-      {
-        filetype = "neo-tree",
-        text = "NeoTree",
-        separator = true,
-        text_align = "left",
-      },
-    },
     hover = {
       enabled = true,
       delay = 200,
       reveal = { "close" },
     },
     custom_filter = function(buf_number, _)
-      if vim.bo[buf_number].filetype == "neo-tree" then
-        return false
-      end
       if vim.api.nvim_buf_get_name(buf_number) == ""
           and vim.bo[buf_number].buftype == ""
           and not vim.bo[buf_number].modified then
@@ -92,11 +81,6 @@ require("kanagawa").setup({
 require("mini.statusline").setup({
   content = {
     active = function()
-      -- Hide in NeoTree
-      if vim.bo.filetype == "neo-tree" then
-        return ""
-      end
-
       local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
       local location = "%l:%c"
       return MiniStatusline.combine_groups({
@@ -109,44 +93,6 @@ require("mini.statusline").setup({
     inactive = function()
       return ""
     end,
-  },
-})
-
--- ----NEO TREE----
-
-require("neo-tree").setup({
-  open_files_do_not_replace_types = { "Trouble", "trouble", "qf", "Outline" },
-  window = {
-    width = 24,
-    auto_expand_width = true,
-  },
-
-  default_component_configs = {
-    container = {
-      enable_character_fade = true,
-    },
-    name = {
-      trailing_slash = false,
-      use_git_status_colors = true,
-    },
-  },
-  filesystem = {
-    components = {
-      name = function(config, node, state)
-        local name = node.name
-        -- If this is the root node, show only the folder name
-        if node:get_depth() == 1 then
-          name = vim.fn.fnamemodify(state.path, ":t")
-          if name == "" then
-            name = vim.fn.fnamemodify(state.path, ":~")
-          end
-        end
-        return {
-          text = name,
-          highlight = config.highlight or "NeoTreeFileName",
-        }
-      end,
-    },
   },
 })
 

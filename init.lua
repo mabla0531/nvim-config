@@ -8,7 +8,6 @@ vim.pack.add({
   "https://github.com/rebelot/kanagawa.nvim",
   "https://github.com/L3MON4D3/LuaSnip",
   "https://github.com/echasnovski/mini.statusline",
-  "https://github.com/nvim-neo-tree/neo-tree.nvim",
   "https://github.com/nvim-lua/plenary.nvim",
   "https://github.com/MunifTanjim/nui.nvim",
   "https://github.com/nvim-tree/nvim-web-devicons",
@@ -26,14 +25,13 @@ vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
   "https://github.com/mg979/vim-visual-multi",
   "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/mikavilpas/yazi.nvim",
 })
 
 require("keymaps")
 require("setup")
 require("options")
 require("lsp")
-
-
 
 -- set colorscheme
 vim.cmd.colorscheme("gruber-darker")

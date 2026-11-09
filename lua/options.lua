@@ -1,12 +1,17 @@
--- disable tildes
 vim.opt.fillchars = { eob = " " }
-
--- enable relative line number
+vim.opt.wrap = false
+vim.opt.swapfile = false
 vim.opt.number = true
 vim.opt.relativenumber = true
-
--- enable spaces instead of tabs
 vim.opt.expandtab = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldmethod = "expr"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.showmode = false
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
@@ -21,36 +26,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- enable clipboard sync
-vim.opt.clipboard = "unnamedplus"
-
--- treesitter stuff and things
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = {
-    "lua",
-    "rust",
-    "svelte",
-    "javascript",
-    "typescript",
-    "zig",
-    "c",
-    "cpp",
-  },
-
+vim.g.loaded_netrwPlugin = 1
+vim.api.nvim_create_autocmd("UIEnter", {
   callback = function()
-    vim.treesitter.start()
+    require("yazi").setup({
+      open_for_directories = true,
+    })
   end,
 })
-
--- code folding
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldmethod = "expr"
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
-
--- hide default vim mode indicator
-vim.opt.showmode = false
-
--- ignore case when searching
-vim.opt.ignorecase = true
-vim.opt.smartcase = true

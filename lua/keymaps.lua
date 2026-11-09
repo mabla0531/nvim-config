@@ -5,8 +5,8 @@ vim.keymap.set("n", "<leader>x", "<cmd>Bdelete<cr>", { desc = " Close Buffer" })
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous Buffer" })
 
--- neotree
-vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = " Toggle NeoTree", silent = true })
+-- yazi
+vim.keymap.set("n", "<leader>e", function() require("yazi").yazi() end, { desc = " Toggle NeoTree", silent = true })
 
 -- paste without yank
 vim.keymap.set("x", "p", "P", { desc = "Paste without yanking" })
@@ -110,7 +110,6 @@ end
 
 vim.keymap.set("n", "<leader>t", toggle_terminal, { desc = "Toggle Terminal", silent = true })
 
--- if the shell exits (e.g. you type `exit`), clean up so the next toggle starts fresh
 vim.api.nvim_create_autocmd("TermClose", {
   callback = function(args)
     if args.buf == term.buf then
