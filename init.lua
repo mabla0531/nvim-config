@@ -42,3 +42,4 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = false, underlin
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = false, underline = true, sp = "#ffdd33" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = false, underline = true, sp = "#ffffff" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = false, underline = true, sp = "#ffffff" })
+vim.api.nvim_set_hl(0, "FlashLabel", { fg = "#000000", bg = "#f43841", bold = true })

@@ -82,6 +82,7 @@ require("gruber-darker").setup({
 })
 
 -- ----KANAGAWA----
+
 require("kanagawa").setup({
   undercurl = false,
 })
