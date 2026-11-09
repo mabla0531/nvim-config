@@ -18,12 +18,13 @@ vim.pack.add({
   "https://github.com/hrsh7th/cmp-path",
   "https://github.com/saadparwaiz1/cmp_luasnip",
   "https://github.com/folke/snacks.nvim",
+  "https://github.com/folke/which-key.nvim",
   "https://github.com/nvim-telescope/telescope.nvim",
   "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
   "https://github.com/rachartier/tiny-inline-diagnostic.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
   "https://github.com/mg979/vim-visual-multi",
-  "https://github.com/folke/which-key.nvim",
   "https://github.com/neovim/nvim-lspconfig",
 })
 
