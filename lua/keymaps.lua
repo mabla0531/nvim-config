@@ -1,5 +1,10 @@
 vim.g.mapleader = " "
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-f>", "<C-f>zz")
+vim.keymap.set("n", "<C-b>", "<C-b>zz")
+
 -- bufferline
 vim.keymap.set("n", "<leader>x", "<cmd>Bdelete<cr>", { desc = " Close Buffer" })
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
