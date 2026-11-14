@@ -147,3 +147,8 @@ end, { desc = "Flash" })
 vim.keymap.set({ "n", "x", "o" }, "S", function()
   require("flash").treesitter()
 end, { desc = "Flash treesitter" })
+
+-- hex dump
+vim.keymap.set("n", "<leader>h", function()
+  require("hex").toggle()
+end, { desc = "Open hex dump" })

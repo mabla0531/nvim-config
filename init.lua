@@ -26,6 +26,7 @@ vim.pack.add({
   "https://github.com/mg979/vim-visual-multi",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/mikavilpas/yazi.nvim",
+  "https://github.com/RaafatTurki/hex.nvim",
 })
 
 require("keymaps")

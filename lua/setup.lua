@@ -1,3 +1,7 @@
+-- ----AUTOPAIRS----
+
+require("nvim-autopairs").setup({})
+
 -- ----BUFFERLINE----
 
 require("bufferline").setup({
